@@ -1,6 +1,13 @@
 package com.service.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import com.domain.model.Account;
 
 @Entity
 @Table(name = "ACCOUNT")
@@ -48,4 +55,11 @@ public class AccountEntity {
     public void setBalance(double balance) {
         this.balance = balance;
     }
+    
+	public Account toAccount() {
+		Account account = new Account(code);
+		account.setBalance(balance);
+		return account;
+	}
+
 }

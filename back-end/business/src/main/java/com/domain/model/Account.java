@@ -21,4 +21,14 @@ public class Account {
     public void setBalance(double balance) {
         this.balance = balance;
     }
+    
+    public void withdraw(double amount) {
+    	balance = balance - amount;
+    }
+    
+    public void deposit(double amount) {
+    	balance = balance + amount;
+    }
+
+
 }

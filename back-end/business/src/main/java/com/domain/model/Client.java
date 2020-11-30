@@ -2,6 +2,7 @@ package com.domain.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Client {
 
@@ -19,6 +20,10 @@ public class Client {
 
     public List<Account> getAccounts() {
         return accounts;
+    }
+    
+    public Optional<Account> getAccountByCode(String accountCode) {
+    	return accounts.stream().filter(a -> a.getCode().equals(accountCode)).findFirst();
     }
 
 }
